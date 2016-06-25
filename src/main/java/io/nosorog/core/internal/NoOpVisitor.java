@@ -95,8 +95,10 @@ import com.github.javaparser.ast.stmt.TryStmt;
 import com.github.javaparser.ast.stmt.TypeDeclarationStmt;
 import com.github.javaparser.ast.stmt.WhileStmt;
 import com.github.javaparser.ast.type.ClassOrInterfaceType;
+import com.github.javaparser.ast.type.IntersectionType;
 import com.github.javaparser.ast.type.PrimitiveType;
 import com.github.javaparser.ast.type.ReferenceType;
+import com.github.javaparser.ast.type.UnionType;
 import com.github.javaparser.ast.type.UnknownType;
 import com.github.javaparser.ast.type.VoidType;
 import com.github.javaparser.ast.type.WildcardType;
@@ -439,6 +441,14 @@ public class NoOpVisitor implements VoidVisitor<Script> {
 
     @Override
     public void visit(TypeExpr n, Script arg) {
+    }
+
+    @Override
+    public void visit(IntersectionType it, Script a) {
+    }
+
+    @Override
+    public void visit(UnionType ut, Script a) {
     }
 
 }
